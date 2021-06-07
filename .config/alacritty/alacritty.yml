@@ -1,0 +1,44 @@
+font:
+  normal:
+    family: Iosevka
+    style: Medium Extended
+  bold:
+    family: Iosevka
+    style: Bold Extended
+  italic:
+    family: Iosevka
+    style: Italic Extended
+  bold_italic:
+    family: Opsevka
+    style: Bold Italic Extended
+  size: 10
+
+#background_opacity: 0.7
+# Colors (Ayu Dark)
+colors:
+  # Default colors
+  primary:
+    background: '#000000'
+    foreground: '#DCDCDC'
+
+  # Normal colors
+  normal:
+    black: '#01060E'
+    red: '#EA6C73'
+    green: '#91B362'
+    yellow: '#F9AF4F'
+    blue: '#53BDFA'
+    magenta: '#FAE994'
+    cyan: '#90E1C6'
+    white: '#C7C7C7'
+
+  # Bright colors
+  bright:
+    black: '#686868'
+    red: '#F07178'
+    green: '#C2D94C'
+    yellow: '#FFB454'
+    blue: '#59C2FF'
+    magenta: '#FFEE99'
+    cyan: '#95E6CB'
+    white: '#FFFFFF'
