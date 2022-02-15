@@ -1,0 +1,80 @@
+* {
+border-radius: 0;
+border: none;
+font-family: "Iosevka Medium Extended, Font Awesome 6 Free Solid";
+font-size: 9pt;
+}
+
+window#waybar {
+background: alpha(#000000,0);
+color: #ffffff;
+}
+
+#workspaces {
+    background: alpha(#d8936c,0.1);
+	margin-top: 1px;
+	margin-bottom: 1px;
+	border-radius: 20px;
+	border-top-left-radius: 0px;
+	border-bottom-left-radius: 0px;
+	padding: 0;
+	padding-right: 5px;
+}
+
+#taskbar {
+    background: alpha(#d8936c,0.1);
+	margin-top: 1px;
+	margin-bottom: 1px;
+	margin-left: 10px;
+	border-radius: 20px;
+	padding: 0 10px;
+}
+
+
+#workspaces button, #taskbar button {
+    padding: 0 5px;
+	margin: 0 5px;
+	background: transparent;
+}
+
+#workspaces button:hover, #taskbar button:hover {
+	border-radius: 20px;
+	padding: 0 10px;
+}
+
+#workspaces button.focused, #taskbar button.active {
+	border-radius: 20px;
+    background: alpha(#d8936c,0.3);
+	padding: 0 10px;
+}
+
+#pulseaudio, #tray, #custom-lights, #custom-shutdown, #custom-switch, #custom-launcher {
+    margin-right: 10px;
+}
+
+#clock {
+	background: alpha(#d8936c,0.3);
+	border-radius: 20px;
+	padding: 0 10px;
+	margin-right: 5px;
+}
+
+.modules-center {
+    background: alpha(#d8936c,0.1);
+	margin: 0;
+	margin-top: 1px;
+	border-radius: 20px;
+	padding: 0 15px;
+}
+
+.modules-right {
+    background: alpha(#d8936c,0.1);
+	margin: 0;
+	margin-top: 1px;
+	margin-bottom: 1px;
+	border-radius: 20px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
+	padding-left: 15px;
+}
+

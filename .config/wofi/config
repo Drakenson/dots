@@ -1,0 +1,12 @@
+lines=7
+location=top
+yoffset=75
+xoffset=0
+width=700
+mode=drun
+term=alacritty
+allow_images=true
+image_size=24
+no_actions=true
+insensitive=true
+term=alacritty
