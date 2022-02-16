@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Rose starten
+GenericName=Office-VM starten und steuern
+Icon=windows
+Exec=/home/robin/.scripts/bootvm.sh Rose
+Terminal=true
