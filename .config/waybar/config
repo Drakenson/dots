@@ -1,6 +1,7 @@
 {
 	"layer": "top",
 	"position": "top",
+	"fixed-center": true,
 	"height": 26,
 	"modules-left": ["sway/workspaces", "wlr/taskbar"],
 	"modules-center": ["mpd"],
@@ -79,7 +80,7 @@
 	"custom/lights": {
 		"format": "  ",
 		"max-length": 4,
-		"on-click": "curl 'https://beli.it.drakenson.de/tratfri/worker.php?key=7DisfR5TPs' -o /dev/null -s",
+		"on-click": "curl 'https://beli.it.drakenson.de/tratfri/worker.php?key=7DisfR5TPs&room=Robins%20Zimmer&type=room' -o /dev/null -s",
 		"tooltip": false
 	},
 	"custom/shutdown": {

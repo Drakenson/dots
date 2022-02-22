@@ -1,5 +1,5 @@
 ## My Dotfiles
-* included are currently:
+Included are currently:
 * vim
 * zsh
 * ncmpcpp

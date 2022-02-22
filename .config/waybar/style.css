@@ -37,10 +37,6 @@ color: #ffffff;
 	background: transparent;
 }
 
-#workspaces button:hover, #taskbar button:hover {
-	border-radius: 20px;
-	padding: 0 10px;
-}
 
 #workspaces button.focused, #taskbar button.active {
 	border-radius: 20px;
