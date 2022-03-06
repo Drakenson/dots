@@ -30,6 +30,11 @@ color: #ffffff;
 	padding: 0 10px;
 }
 
+#taskbar button:hover, #workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+
 
 #workspaces button, #taskbar button {
     padding: 0 5px;
