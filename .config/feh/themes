@@ -1,1 +1,0 @@
-feh -. -B black -N --info "identify -format '%wx%h' %F && date '+ - %H:%M'"
