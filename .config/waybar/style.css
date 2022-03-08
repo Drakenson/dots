@@ -3,6 +3,7 @@ border-radius: 0;
 border: none;
 font-family: "Iosevka Medium Extended, Font Awesome 6 Free Solid";
 font-size: 9pt;
+color: #eedddd;
 }
 
 window#waybar {
@@ -11,19 +12,17 @@ color: #ffffff;
 }
 
 #workspaces {
-    background: alpha(#d8936c,0.1);
-	margin-top: 1px;
+    background: alpha(#d8936c,0.5);
+	margin-top: 0px;
 	margin-bottom: 1px;
-	border-radius: 20px;
-	border-top-left-radius: 0px;
-	border-bottom-left-radius: 0px;
+	border-radius: 0px 20px 20px 0px ;
 	padding: 0;
 	padding-right: 5px;
 }
 
 #taskbar {
-    background: alpha(#d8936c,0.1);
-	margin-top: 1px;
+    background: alpha(#d8936c,0.5);
+	margin-top: 0px;
 	margin-bottom: 1px;
 	margin-left: 10px;
 	border-radius: 20px;
@@ -45,33 +44,33 @@ color: #ffffff;
 
 #workspaces button.focused, #taskbar button.active {
 	border-radius: 20px;
-    background: alpha(#d8936c,0.3);
+    background: alpha(#d8936c,0.7);
 	padding: 0 10px;
 }
 
-#pulseaudio, #tray, #custom-lights, #custom-shutdown, #custom-switch, #custom-launcher {
+#battery, #pulseaudio, #tray, #custom-lights, #custom-shutdown, #custom-switch, #custom-launcher {
     margin-right: 10px;
 }
 
-#clock {
-	background: alpha(#d8936c,0.3);
-	border-radius: 20px;
+#tray {
+	background: alpha(#d8936c,0.7);
+	border-radius: 20px 0px 0px 20px;
 	padding: 0 10px;
-	margin-right: 5px;
+	margin-right: 0px;
 }
 
 .modules-center {
-    background: alpha(#d8936c,0.1);
+    background: alpha(#d8936c,0.5);
 	margin: 0;
-	margin-top: 1px;
+	margin-top: 0px;
 	border-radius: 20px;
 	padding: 0 15px;
 }
 
 .modules-right {
-    background: alpha(#d8936c,0.1);
+    background: alpha(#d8936c,0.5);
 	margin: 0;
-	margin-top: 1px;
+	margin-top: 0px;
 	margin-bottom: 1px;
 	border-radius: 20px;
 	border-top-right-radius: 0px;

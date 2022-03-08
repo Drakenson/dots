@@ -4,8 +4,8 @@
 	"fixed-center": true,
 	"height": 26,
 	"modules-left": ["sway/workspaces", "wlr/taskbar"],
-	"modules-center": ["mpd"],
-	"modules-right": ["pulseaudio", "tray", "custom/hikari", "custom/lights", "custom/shutdown", "custom/switch", "custom/launcher", "clock"],
+	"modules-center": ["clock"],
+	"modules-right": ["battery", "pulseaudio", "custom/hikari", "custom/lights", "custom/shutdown", "custom/switch", "custom/launcher", "tray"],
 	"sway/window": {
 		"max-length": 50
 	},
@@ -65,6 +65,17 @@
 		"on-click-right": "pavucontrol",
 		"on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
 		"on-click": "$HOME/.config/waybar/pulse_script.sh"
+	},
+	"battery": {
+  		"bat": "BAT0",
+    	"interval": 60,
+    	"states": {
+        	"warning": 30,
+        	"critical": 15
+    },
+    "format": "{capacity}% {icon}",
+    "format-icons": ["", "", "", "", ""],
+    "max-length": 25
 	},
 	"custom/launcher": {
 		"format": "  ",
