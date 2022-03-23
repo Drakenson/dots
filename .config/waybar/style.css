@@ -49,7 +49,11 @@ color: #ffffff;
 	padding: 0 10px;
 }
 
-#pulseaudio, #tray, #custom-lights, #custom-shutdown, #custom-switch, #custom-launcher {
+#custom-vm {
+	margin-right: 5px;
+}
+
+#network, #pulseaudio, #tray, #custom-lights, #custom-shutdown, #custom-switch, #custom-launcher {
     margin-right: 10px;
 }
 

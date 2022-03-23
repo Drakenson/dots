@@ -23,10 +23,10 @@ colors:
   # Normal colors
   normal:
     black: '#181115'
-    red: '#ac583b'
-    green: '#a26857'
-    yellow: '#bf8a6d'
-    blue: '#d8936c'
+    red: '#a04643'
+    green: '#6d843d'
+    yellow: '#d8936c'
+    blue: '#9c634f'
     magenta: '#3e44a3'
     cyan: '#685788'
     white: '#c0b0c5'
@@ -34,10 +34,10 @@ colors:
   # Bright colors
   bright:
     black: '#867b89'
-    red: '#ac583b'
-    green: '#a26857'
-    yellow: '#bf8a6d'
-    blue: '#d8936c'
-    magenta: '#3e44a3'
+    red: '#bd7a74'
+    green: '#8fa65d'
+    yellow: '#d5a88f'
+    blue: '#bc806b'
+    magenta: '#5f5fc3'
     cyan: '#685788'
     white: '#c0b0c5'

@@ -5,7 +5,7 @@
 	"height": 26,
 	"modules-left": ["sway/workspaces", "wlr/taskbar"],
 	"modules-center": ["mpd"],
-	"modules-right": ["pulseaudio", "tray", "custom/hikari", "custom/lights", "custom/shutdown", "custom/switch", "custom/launcher", "clock"],
+	"modules-right": ["custom/vm", "network", "pulseaudio", "tray", "custom/hikari", "custom/lights", "custom/shutdown", "custom/switch", "custom/launcher", "clock"],
 	"sway/window": {
 		"max-length": 50
 	},
@@ -50,6 +50,16 @@
 	"clock": {
 		"format-alt": "{:%d.%m.%Y KW%U}"
 	},
+	"network": {
+    	"interface": "br0",
+    	"format-ethernet": "",
+    	"format-disconnected": "Kein Netzwerk",
+   		"tooltip-format-ethernet": "{ipaddr}/{cidr} ",
+   		"tooltip-format-disconnected": "",
+   		"max-length": 50,
+		"on-click": "$HOME/.config/waybar/bridge_script.sh",
+		"on-click-right": "alacritty -e nmtui"
+	},
 	"pulseaudio": {
 		"format": "{volume}% {icon}",
 		"format-muted": " ",
@@ -72,6 +82,13 @@
 		"on-click": "wofi -b",
 		"tooltip": false
 	},
+	"custom/vm": {
+		"format": "{icon} {}",
+		"interval": 10,
+		"on-click": "virt-manager",
+		"exec": "~/.config/waybar/vm_script.sh",
+		"format-icons": ""
+	},
 	"custom/switch": {
 		"format": "  ",
 		"max-lenth": 4,
@@ -80,7 +97,7 @@
 	"custom/lights": {
 		"format": "  ",
 		"max-length": 4,
-		"on-click": "curl 'https://beli.it.drakenson.de/tratfri/worker.php?key=7DisfR5TPs&room=Robins%20Zimmer&type=room' -o /dev/null -s",
+		"on-click": "curl 'https://beli.it.drakenson.de/tratfri/worker.php?special=robin' -o /dev/null -s",
 		"tooltip": false
 	},
 	"custom/shutdown": {
