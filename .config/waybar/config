@@ -57,7 +57,7 @@
    		"tooltip-format-ethernet": "{ipaddr}/{cidr} ",
    		"tooltip-format-disconnected": "",
    		"max-length": 50,
-		"on-click": "$HOME/.config/waybar/bridge_script.sh",
+		"on-click": "$HOME/.scripts/waybar_bridge.sh",
 		"on-click-right": "alacritty -e nmtui"
 	},
 	"pulseaudio": {
@@ -74,7 +74,7 @@
 		},
 		"on-click-right": "pavucontrol",
 		"on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-		"on-click": "$HOME/.config/waybar/pulse_script.sh"
+		"on-click": "$HOME/.scripts/waybar_pulse.sh"
 	},
 	"custom/launcher": {
 		"format": "  ",
@@ -84,9 +84,10 @@
 	},
 	"custom/vm": {
 		"format": "{icon} {}",
-		"interval": 10,
+		"interval": 60,
 		"on-click": "virt-manager",
-		"exec": "~/.config/waybar/vm_script.sh",
+		"on-click-right": "sudo ddcutil --bus 1 setvcp 60 15",
+		"exec": "$HOME/.scripts/waybar_vm_list.sh",
 		"format-icons": ""
 	},
 	"custom/switch": {
@@ -103,9 +104,9 @@
 	"custom/shutdown": {
 		"format": "  ",
 		"max-length": 4,
-		"on-click": "swaynag -f 'pango:Ubuntu 10' -t warning -m 'System herunterfahren?' -B 'Herunterfahren' 'systemctl poweroff'",
-		"on-click-right": "swaynag -f 'pango:Ubuntu 10' -t warning -m 'System neustarten?' -B 'Neustarten' 'systemctl reboot'",
-		"on-click-middle": "swaynag -f 'pango:Ubuntu 10' -t warning -m 'System in Standby versetzen?' -B 'Standby' 'systemctl suspend'"
+		"on-click": "$HOME/.scripts/waybar_shutdown.sh poweroff",
+		"on-click-right": "$HOME/.scripts/waybar_shutdown.sh reboot",
+		"on-click-middle": "$HOME/.scripts/waybar_shutdown.sh suspend"
 	},
 	"tray": {
 		"icon-size": 14,

@@ -194,5 +194,8 @@ exec --no-startup-id telegram-desktop -startintray
 #Nextcloud Client
 exec --no-startup-id "sh -c 'sleep 5; exec nextcloud'"
 
+#Discord
+#exec --no-startup-id discord --start-minimized
+
 #Redshift
 exec --no-startup-id gammastep-indicator

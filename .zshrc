@@ -64,5 +64,3 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias dots='/usr/bin/git --git-dir=$HOME/.dots --work-tree=$HOME'
-source ~/.zshrc_priv
-
