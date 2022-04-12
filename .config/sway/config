@@ -17,7 +17,7 @@ input 5426:515:Razer_Razer_BlackWidow_Chroma {
 
 #Display
 output HDMI-A-1 pos 0 0 res 1920x1080@60Hz bg /home/robin/Bilder/Wallpaper/church_girl.jpg fill
-output HDMI-A-2 pos 1920 0 res 1920x1080@60Hz bg /home/robin/Bilder/Wallpaper/church_girl.jpg fill
+output DP-1 pos 1920 0 res 1920x1080@60Hz bg /home/robin/Bilder/Wallpaper/church_girl.jpg fill
 
 #Cursor
 seat seat0 xcursor_theme Vanilla-DMZ
@@ -153,14 +153,14 @@ bindsym $win+Shift+8 move container to workspace $ws8
 bindsym $win+Shift+9 move container to workspace $ws9
 bindsym $win+Shift+0 move container to workspace $ws0
 
-bindsym Shift+KP_Home exec sudo ddcutil --bus 1 setvcp 60 17; exec sudo ddcutil --bus 0 setvcp 60 3
-bindsym Shift+KP_Prior exec sudo ddcutil --bus 1 setvcp 60 1; exec sudo ddcutil --bus 0 setvcp 60 17
-bindsym Shift+KP_End exec sudo ddcutil --bus 1 setvcp 60 17
-bindsym Shift+KP_Down exec sudo ddcutil --bus 1 setvcp 60 15
-bindsym Shift+KP_Next exec sudo ddcutil --bus 1 setvcp 60 1
-bindsym Shift+KP_Left exec sudo ddcutil --bus 0 setvcp 60 3
-bindsym Shift+KP_Begin exec sudo ddcutil --bus 0 setvcp 60 1
-bindsym Shift+KP_Right exec sudo ddcutil --bus 0 setvcp 60 17
+bindsym Shift+KP_Home exec sudo ddcutil --bus 4 setvcp 60 17; exec sudo ddcutil --bus 3 setvcp 60 3
+bindsym Shift+KP_Prior exec sudo ddcutil --bus 4 setvcp 60 1; exec sudo ddcutil --bus 3 setvcp 60 17
+bindsym Shift+KP_End exec sudo ddcutil --bus 3 setvcp 60 17
+bindsym Shift+KP_Down exec sudo ddcutil --bus 3 setvcp 60 15
+bindsym Shift+KP_Next exec sudo ddcutil --bus 3 setvcp 60 1
+bindsym Shift+KP_Left exec sudo ddcutil --bus 4 setvcp 60 3
+bindsym Shift+KP_Begin exec sudo ddcutil --bus 4 setvcp 60 1
+bindsym Shift+KP_Right exec sudo ddcutil --bus 4 setvcp 60 17
 
 #Reload and exit
 bindsym $win+Shift+r reload
@@ -170,12 +170,15 @@ bindsym $win+Shift+e exec "swaynag -f 'pango:Ubuntu 10' -t warning -m 'Do you re
 bindsym $win+Shift+s exec --no-startup-id 'grim -g "$(slurp)" - | wl-copy'
 bindsym Print exec --no-startup-id 'grim -g "$(slurp)" - | wl-copy'
 
-#Bildschirm umschalten
+#Waybar
+bar {
+swaybar_command waybar
+}
 
 #Audio control
 bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
-bindsym XF86AudioLowerVolume exec "sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +2%'"
-bindsym XF86AudioRaiseVolume exec "sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -2%'"
+bindsym XF86AudioLowerVolume exec "sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 -2%'"
+bindsym XF86AudioRaiseVolume exec "sh -c 'pactl set-sink-mute 0 false ; pactl set-sink-volume 0 +2%'"
 
 #Autostart
 
@@ -183,10 +186,10 @@ bindsym XF86AudioRaiseVolume exec "sh -c 'pactl set-sink-mute 0 false ; pactl se
 exec --no-startup-id echo -n -e "\x03\x00" > $(find -L /sys/bus/hid/drivers/razerkbd/0003:1532:0203.000* -maxdepth 1 -type f -name device_mode)
 
 #ALSA Disable Auto-Mute
-exec --no-startup-id amixer -c 0 sset "Auto-Mute Mode" Disabled
+exec --no-startup-id amixer -c 1 sset "Auto-Mute Mode" Disabled
 
 #Waybar 
-exec --no-startup-id waybar
+#exec --no-startup-id waybar
 
 #Telegram
 exec --no-startup-id telegram-desktop -startintray
@@ -197,5 +200,11 @@ exec --no-startup-id "sh -c 'sleep 5; exec nextcloud'"
 #Discord
 #exec --no-startup-id discord --start-minimized
 
+#Notification
+exec --no-startup-id mako
+
 #Redshift
 exec --no-startup-id gammastep-indicator
+
+#Switch Monitor
+#exec --no-startup-id sudo ddcutil --bus 3 setvcp 60 17

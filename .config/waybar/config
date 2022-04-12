@@ -74,7 +74,8 @@
 		},
 		"on-click-right": "pavucontrol",
 		"on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-		"on-click": "$HOME/.scripts/waybar_pulse.sh"
+		"on-click": "$HOME/.scripts/waybar_pulse.sh",
+		"tooltip": false
 	},
 	"custom/launcher": {
 		"format": "  ",
@@ -86,7 +87,7 @@
 		"format": "{icon} {}",
 		"interval": 60,
 		"on-click": "virt-manager",
-		"on-click-right": "sudo ddcutil --bus 1 setvcp 60 15",
+		"on-click-right": "looking-glass-client -s -F",
 		"exec": "$HOME/.scripts/waybar_vm_list.sh",
 		"format-icons": ""
 	},
