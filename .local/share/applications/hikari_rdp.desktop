@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Hikari per RDP anzeigen
+GenericName=Hikari per RDP anzeigen
+Icon=remmina
+Exec=remmina -c /home/robin/.local/share/remmina/group_rdp_hikari_hikari.remmina
+Terminal=false

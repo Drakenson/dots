@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=ncmpcpp
+GenericName=MPD Client
+Icon=rhythmbox
+Exec=alacritty -e ncmpcpp
+Terminal=false

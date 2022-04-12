@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Ray per RDP anzeigen
+GenericName=Ray per RDP anzeigen
+Icon=remmina
+Exec=remmina -c /home/robin/.local/share/remmina/group_rdp_rayvolva_rayvolva.remmina
+Terminal=false

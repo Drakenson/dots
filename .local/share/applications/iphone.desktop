@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=iPhone durchreichen
+GenericName=iphone
+Icon=windows
+Exec=virsh --connect qemu:///system attach-device Hikari /home/robin/.devices/iphone.xml
+Terminal=false

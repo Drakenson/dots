@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Cursed per RDP anzeigen
+GenericName=Cursed per RDP anzeigen
+Icon=remmina
+Exec=remmina -c /home/robin/.local/share/remmina/group_rdp_cursed_cursed.remmina
+Terminal=false

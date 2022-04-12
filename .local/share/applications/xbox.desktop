@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Xbox-Controller durchreichen
+GenericName=xbox
+Icon=windows
+Exec=virsh --connect qemu:///system attach-device Hikari /home/robin/.devices/xbox.xml
+Terminal=false

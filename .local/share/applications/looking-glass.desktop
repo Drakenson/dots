@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Looking Glass
+GenericName=Remote Tool
+Icon=unity-lens-photos
+Exec=looking-glass-client -s win:dontUpscale=yes -F
+Terminal=false
