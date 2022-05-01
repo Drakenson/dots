@@ -17,7 +17,10 @@
 		"on-click": "activate",
 		"on-click-middle": "close",
 		"all-outputs": true,
-		"tooltip": false
+		"tooltip": false,
+		"ignore-list": [
+			"evolution"
+		],
 	},
 	"sway/workspaces": {
 		"all-outputs": true
@@ -48,7 +51,9 @@
 		"tooltip-format": "Linksklick: Play/Pause\nMittelklick: Nächstes Lied\nRechtsklick: Player öffnen\nScrollen: Lautstärke regeln",
 	},
 	"clock": {
-		"format-alt": "{:%d.%m.%Y KW%U}"
+		"format-alt": "{:%d.%m.%Y KW%U}",
+		"tooltip": true,
+		"tooltip-format": "<big>{:%Y %B}</big>\n<tt>{calendar}</tt>"
 	},
 	"network": {
     	"interface": "br0",

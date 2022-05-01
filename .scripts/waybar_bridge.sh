@@ -1,5 +1,5 @@
 #!/bin/bash
-nw=$(bash -c 'nmcli | grep "enp7s0: nicht verbunden"')
+nw=$(bash -c 'nmcli | grep "enp42s0: nicht verbunden"')
 if [ -z "$nw" ]
 then
 	nmcli connection down it.drakenson.de
