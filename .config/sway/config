@@ -6,6 +6,9 @@
 #
 
 
+#For testing:
+#xwayland disable
+
 #Sway Stuff
 
 #Keyboard
@@ -45,9 +48,6 @@ smart_borders on
 default_border pixel 2
 default_floating_border pixel 2
 hide_edge_borders both
-
-#Don't teleport mouse
-#mouse_warping none
 
 #Workspace back-and-forth
 #For instance: Assume you are on workspace "1: www" and switch to "2: IM" using mod+2 because somebody sent you a message. You don’t need to remember where you came from now, you can just press $mod+2 again to switch back to "1: www".
@@ -115,19 +115,22 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws0 ""
-
+set $ws0 "10"
+set $wsn ""
+set $wsm ""
 #bind workspaces to screens
 workspace $ws1 output HDMI-A-1
-workspace $ws2 output HDMI-A-2
+workspace $ws2 output DP-1
 workspace $ws3 output HDMI-A-1
-workspace $ws4 output HDMI-A-2
+workspace $ws4 output DP-1
 workspace $ws5 output HDMI-A-1
-workspace $ws6 output HDMI-A-2
+workspace $ws6 output DP-1
 workspace $ws7 output HDMI-A-1
-workspace $ws8 output HDMI-A-2
+workspace $ws8 output DP-1
 workspace $ws9 output HDMI-A-1
-workspace $ws0 output HDMI-A-2
+workspace $ws0 output DP-1
+workspace $wsn output DP-1
+workspace $wsm output DP-1
 
 # switch to workspace
 bindsym $win+1 workspace $ws1
@@ -140,6 +143,8 @@ bindsym $win+7 workspace $ws7
 bindsym $win+8 workspace $ws8
 bindsym $win+9 workspace $ws9
 bindsym $win+0 workspace $ws0
+bindsym $win+n workspace $wsn
+bindsym $win+m workspace $wsm
 
 # move focused container to workspace
 bindsym $win+Shift+1 move container to workspace $ws1
@@ -152,6 +157,11 @@ bindsym $win+Shift+7 move container to workspace $ws7
 bindsym $win+Shift+8 move container to workspace $ws8
 bindsym $win+Shift+9 move container to workspace $ws9
 bindsym $win+Shift+0 move container to workspace $ws0
+bindsym $win+Shift+n move container to workspace $wsn
+bindsym $win+Shift+m move container to workspace $wsm
+
+assign [title="water"] workspace "R4"
+assign [app_id="evolution"] workspace ""
 
 bindsym Shift+KP_Home exec sudo ddcutil --bus 4 setvcp 60 17; exec sudo ddcutil --bus 3 setvcp 60 3
 bindsym Shift+KP_Prior exec sudo ddcutil --bus 4 setvcp 60 1; exec sudo ddcutil --bus 3 setvcp 60 17
@@ -184,27 +194,17 @@ bindsym XF86AudioRaiseVolume exec "sh -c 'pactl set-sink-mute 0 false ; pactl se
 
 #Init Razer Macro Keys
 exec --no-startup-id echo -n -e "\x03\x00" > $(find -L /sys/bus/hid/drivers/razerkbd/0003:1532:0203.000* -maxdepth 1 -type f -name device_mode)
-
 #ALSA Disable Auto-Mute
 exec --no-startup-id amixer -c 1 sset "Auto-Mute Mode" Disabled
-
-#Waybar 
-#exec --no-startup-id waybar
-
 #Telegram
 exec --no-startup-id telegram-desktop -startintray
-
 #Nextcloud Client
 exec --no-startup-id "sh -c 'sleep 5; exec nextcloud'"
-
-#Discord
-#exec --no-startup-id discord --start-minimized
-
-#Notification
+#Notifications
 exec --no-startup-id mako
-
-#Redshift
-exec --no-startup-id gammastep-indicator
-
-#Switch Monitor
-#exec --no-startup-id sudo ddcutil --bus 3 setvcp 60 17
+#Nightmode
+exec --no-startup-id gammastep
+#Polychromatic Config (einmal auflisten, um sicherzustellen, dass Farbeinstellungen geladen werden..)
+exec --no-startup-id polychromatic-cli -l
+#Evolution Mail
+exec --no-startup-id evolution
