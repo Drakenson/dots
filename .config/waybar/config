@@ -5,7 +5,7 @@
 	"height": 26,
 	"modules-left": ["sway/workspaces", "wlr/taskbar"],
 	"modules-center": ["mpd"],
-	"modules-right": ["custom/vm", "network", "pulseaudio", "tray", "custom/hikari", "custom/lights", "custom/shutdown", "custom/switch", "custom/launcher", "clock"],
+	"modules-right": [ "custom/vm", "network", "pulseaudio", "tray", "custom/hikari", "custom/shutdown", "custom/switch", "custom/launcher", "clock", "custom/changebg"],
 	"sway/window": {
 		"max-length": 50
 	},
@@ -63,7 +63,7 @@
    		"tooltip-format-disconnected": "",
    		"max-length": 50,
 		"on-click": "$HOME/.scripts/waybar_bridge.sh",
-		"on-click-right": "alacritty -e nmtui"
+		"on-click-right": "lxterminal -e nmtui"
 	},
 	"pulseaudio": {
 		"format": "{volume}% {icon}",
@@ -101,18 +101,16 @@
 		"max-lenth": 4,
 		"on-click": "swaymsg move window to output right"
 	},
-	"custom/lights": {
-		"format": "  ",
-		"max-length": 4,
-		"on-click": "curl 'https://beli.it.drakenson.de/tratfri/worker.php?special=robin' -o /dev/null -s",
-		"tooltip": false
-	},
 	"custom/shutdown": {
 		"format": "  ",
 		"max-length": 4,
 		"on-click": "$HOME/.scripts/waybar_shutdown.sh poweroff",
 		"on-click-right": "$HOME/.scripts/waybar_shutdown.sh reboot",
 		"on-click-middle": "$HOME/.scripts/waybar_shutdown.sh suspend"
+	},
+	"custom/changebg": {
+    	"exec": "~/.scripts/set_random_wallpaper.sh",
+	    "interval": 360,
 	},
 	"tray": {
 		"icon-size": 14,

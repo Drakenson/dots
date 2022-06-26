@@ -1,3 +1,8 @@
+#Scrolling
+history: 10000
+multiplier: 10
+
+#Fonts
 font:
   normal:
     family: Iosevka
@@ -13,31 +18,62 @@ font:
     style: Bold Italic Extended
   size: 10
 
-# Colors (Ayu Dark)
+# Colors (Gruvbox dark)
 colors:
-  # Default colors
   primary:
-    background: '#000000'
-    foreground: '#d2c6d5'
-
-  # Normal colors
-  normal:
-    black: '#181115'
-    red: '#a04643'
-    green: '#6d843d'
-    yellow: '#d8936c'
-    blue: '#9c634f'
-    magenta: '#3e44a3'
-    cyan: '#685788'
-    white: '#c0b0c5'
-
-  # Bright colors
+    # hard contrast background - '#1d2021'
+    background:        &gruvbox_dark_bg '#282828'
+    # soft contrast background - '#32302f'
+    foreground:        '#ebdbb2'
+    bright_foreground: '#fbf1c7'
+    dim_foreground:    '#a89984'
+  cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  vi_mode_cursor:
+    text:   CellBackground
+    cursor: CellForeground
+  # search:
+  #   matches:
+  #     foreground: '#000000'
+  #     background: '#ffffff'
+  #   focused_match:
+  #    foreground: CellBackground
+  #    background: CellForeground
+  #   bar:
+  #     background: ''
+  #     foreground: ''
+  # line_indicator:
+  #   foreground: None
+  #   background: None
+  selection:
+    text:       CellBackground
+    background: CellForeground
   bright:
-    black: '#867b89'
-    red: '#bd7a74'
-    green: '#8fa65d'
-    yellow: '#d5a88f'
-    blue: '#bc806b'
-    magenta: '#5f5fc3'
-    cyan: '#685788'
-    white: '#c0b0c5'
+    black:   '#928374'
+    red:     '#fb4934'
+    green:   '#b8bb26'
+    yellow:  '#fabd2f'
+    blue:    '#83a598'
+    magenta: '#d3869b'
+    cyan:    '#8ec07c'
+    white:   '#ebdbb2'
+  normal:
+    black:   *gruvbox_dark_bg
+    red:     '#cc241d'
+    green:   '#98971a'
+    yellow:  '#d79921'
+    blue:    '#458588'
+    magenta: '#b16286'
+    cyan:    '#689d6a'
+    white:   '#a89984'
+  dim:
+    black:   '#32302f'
+    red:     '#9d0006'
+    green:   '#79740e'
+    yellow:  '#b57614'
+    blue:    '#076678'
+    magenta: '#8f3f71'
+    cyan:    '#427b58'
+    white:   '#928374'
+  # indexed_colors: []

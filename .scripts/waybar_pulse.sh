@@ -1,6 +1,6 @@
 #!/bin/bash
-hp=$(bash -c 'pactl list sinks | grep "Aktiver Port: analog-output-headphones-2"')
-lo=$(bash -c 'pactl list sinks | grep "Aktiver Port: analog-output-lineout"')
+hp=$(bash -c 'pactl list sinks | grep "Active Port: analog-output-headphones-2"')
+lo=$(bash -c 'pactl list sinks | grep "Active Port: analog-output-lineout"')
 
 if [ -z "$lo" ]
 then

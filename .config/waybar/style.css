@@ -53,7 +53,7 @@ color: #ffffff;
 	margin-right: 5px;
 }
 
-#network, #pulseaudio, #tray, #custom-lights, #custom-shutdown, #custom-switch, #custom-launcher {
+#network, #custom-loopback, #pulseaudio, #tray, #custom-lights, #custom-shutdown, #custom-switch, #custom-launcher {
     margin-right: 10px;
 }
 

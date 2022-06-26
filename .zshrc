@@ -50,8 +50,14 @@ fi
 #Green
 #PROMPT='%B%(!.%F{196}.%F{#afd700})%n@%m:%f%F{39}%~%b%f%(!.#.$) '
 
-#Cosy
+#Blue
+#PROMPT='%B%(!.%F{196}.%F{#afd700})%n@%m:%f%F{#596eb5}%~%b%f%(!.#.$) '
+
+#Orange
 PROMPT='%B%(!.%F{#ac583b}.%F{#685788})%n@%m:%f%F{#a26857}%~%b%f%(!.#.$) '
+
+#Nord
+#PROMPT='%B%(!.%F{#bf616a}.%F{#a3be8c})%n@%m:%f%F{#d08770}%~%b%f%(!.#.$) '
 
 HISTFILE=~/.zhistory
 setopt INC_APPEND_HISTORY
@@ -65,3 +71,4 @@ alias ls='ls --color=auto'
 alias ll='ls -l'
 alias dots='/usr/bin/git --git-dir=$HOME/.dots --work-tree=$HOME'
 alias df='~/.scripts/df.sh'
+alias cputemp='sensors k10temp-pci-00c3 | grep Tctl'
