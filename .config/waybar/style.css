@@ -6,12 +6,12 @@ font-size: 9pt;
 }
 
 window#waybar {
-background: alpha(#000000,0);
+background: alpha(#4c2738,0);
 color: #ffffff;
 }
 
 #workspaces {
-    background: alpha(#d8936c,0.1);
+    background: alpha(#ffffff,0.1);
 	margin-top: 1px;
 	margin-bottom: 1px;
 	border-radius: 20px;
@@ -22,9 +22,9 @@ color: #ffffff;
 }
 
 #taskbar {
-    background: alpha(#d8936c,0.1);
-	margin-top: 1px;
-	margin-bottom: 1px;
+    background: alpha(#ffffff,0.1);
+	margin-top: 0px;
+	margin-bottom: 0px;
 	margin-left: 10px;
 	border-radius: 20px;
 	padding: 0 10px;
@@ -40,12 +40,13 @@ color: #ffffff;
     padding: 0 5px;
 	margin: 0 5px;
 	background: transparent;
+	color: #ffffff;
 }
 
 
 #workspaces button.focused, #taskbar button.active {
 	border-radius: 20px;
-    background: alpha(#d8936c,0.3);
+    background: alpha(#ffffff,0.2);
 	padding: 0 10px;
 }
 
@@ -58,14 +59,15 @@ color: #ffffff;
 }
 
 #clock {
-	background: alpha(#d8936c,0.3);
+	background: alpha(#ffffff,0.2);
 	border-radius: 20px;
+	border-top-right-radius: 0px;
+	border-bottom-right-radius: 0px;
 	padding: 0 10px;
-	margin-right: 5px;
 }
 
 .modules-center {
-    background: alpha(#d8936c,0.1);
+    background: alpha(#ffffff,0.1);
 	margin: 0;
 	margin-top: 1px;
 	border-radius: 20px;
@@ -73,10 +75,10 @@ color: #ffffff;
 }
 
 .modules-right {
-    background: alpha(#d8936c,0.1);
+    background: alpha(#ffffff,0.1);
 	margin: 0;
-	margin-top: 1px;
-	margin-bottom: 1px;
+	margin-top: 0px;
+	margin-bottom: 0px;
 	border-radius: 20px;
 	border-top-right-radius: 0px;
 	border-bottom-right-radius: 0px;

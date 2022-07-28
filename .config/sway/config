@@ -27,8 +27,8 @@ input 5426:515:Razer_Razer_BlackWidow_Chroma {
 
 #output HDMI-A-1 pos 0 0 res 1920x1080@60Hz bg $WallpaperDir/$WallpaperImage fill
 #output DP-1 pos 1920 0 res 1920x1080@60Hz bg $WallpaperDir/$WallpaperImage fill
-#output HDMI-A-1 pos 0 0 res 1920x1080@60Hz
-#output DP-1 pos 1920 0 res 1920x1080@60Hz
+output DP-1 pos 0 0 res 1920x1080@60Hz
+output HDMI-A-1 pos 1920 0 res 1920x1080@60Hz
 
 #Cursor
 seat seat0 xcursor_theme Vanilla-DMZ
@@ -66,8 +66,8 @@ client.placeholder $ActColor $InactColor #ffffff $ActColor $ActColor
 floating_modifier $win
 
 # start a terminal
-#bindsym $win+Return exec alacritty
 bindsym $win+Return exec alacritty
+bindsym $win+Shift+Return exec alacritty -e pwsh
 
 # kill focused window
 bindsym $win+Shift+q kill
@@ -125,18 +125,18 @@ set $ws0 "10"
 set $wsn ""
 set $wsm ""
 #bind workspaces to screens
-workspace $ws1 output HDMI-A-1
-workspace $ws2 output DP-1
-workspace $ws3 output HDMI-A-1
-workspace $ws4 output DP-1
-workspace $ws5 output HDMI-A-1
-workspace $ws6 output DP-1
-workspace $ws7 output HDMI-A-1
-workspace $ws8 output DP-1
-workspace $ws9 output HDMI-A-1
-workspace $ws0 output DP-1
-workspace $wsn output DP-1
-workspace $wsm output DP-1
+workspace $ws1 output DP-1
+workspace $ws2 output HDMI-A-1
+workspace $ws3 output DP-1
+workspace $ws4 output HDMI-A-1
+workspace $ws5 output DP-1
+workspace $ws6 output HDMI-A-1
+workspace $ws7 output DP-1
+workspace $ws8 output HDMI-A-1
+workspace $ws9 output DP-1
+workspace $ws0 output HDMI-A-1
+workspace $wsn output HDMI-A-1
+workspace $wsm output HDMI-A-1
 
 # switch to workspace
 bindsym $win+1 workspace $ws1
@@ -191,12 +191,12 @@ bindsym XF86AudioRaiseVolume exec "sh -c 'pactl set-sink-mute 0 false ; pactl se
 #Init Razer Macro Keys
 exec --no-startup-id echo -n -e "\x03\x00" > $(find -L /sys/bus/hid/drivers/razerkbd/0003:1532:0203.000* -maxdepth 1 -type f -name device_mode)
 #Init ALSA und PipeWire
-exec --no-startup-id /home/robin/.scripts/init_pipewire.sh
+exec --no-startup-id "sh -c 'sleep 5; exec /home/robin/.scripts/init_pipewire.sh'"
 #Scream
 exec --no-startup-id "sh -c 'sleep 5; exec scream'"
 #Set Wallpaper
-#exec_always --no-startup-id /home/robin/.scripts/set_wallpaper.sh
 exec --no-startup-id oguri
+exec --no-startup-id /home/robin/.scripts/set_random_wallpaper.sh
 #Telegram
 exec --no-startup-id telegram-desktop -startintray
 #Nextcloud Client

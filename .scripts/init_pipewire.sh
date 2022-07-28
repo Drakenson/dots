@@ -1,4 +1,5 @@
 #!/bin/bash
+sleep 5
 amixer -c 1 sset 'Input Source',0 'Rear Mic'
 amixer -c 1 sset 'Input Source',1 'Line'
 amixer -c 1 sset "Auto-Mute Mode" Disabled

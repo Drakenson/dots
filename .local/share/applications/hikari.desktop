@@ -5,8 +5,3 @@ GenericName=Gaming-VM starten und steuern
 Icon=windows
 Exec=/home/robin/.scripts/bootvm.sh Hikari
 Terminal=true
-Actions=cpu-disable;
-
-[Desktop Action cpu-disable]
-Name=Hikari starten (mit dedizierten Cores)
-Exec=/home/robin/.config/bootvm.sh Hikari 1

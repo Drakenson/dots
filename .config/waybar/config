@@ -5,7 +5,7 @@
 	"height": 26,
 	"modules-left": ["sway/workspaces", "wlr/taskbar"],
 	"modules-center": ["mpd"],
-	"modules-right": [ "custom/vm", "network", "pulseaudio", "tray", "custom/hikari", "custom/shutdown", "custom/switch", "custom/launcher", "clock", "custom/changebg"],
+	"modules-right": [ "custom/vm", "network", "pulseaudio", "tray", "custom/shutdown", "custom/switch", "custom/launcher", "clock" ],
 	"sway/window": {
 		"max-length": 50
 	},
@@ -63,7 +63,7 @@
    		"tooltip-format-disconnected": "",
    		"max-length": 50,
 		"on-click": "$HOME/.scripts/waybar_bridge.sh",
-		"on-click-right": "lxterminal -e nmtui"
+		"on-click-right": "alacritty -e nmtui"
 	},
 	"pulseaudio": {
 		"format": "{volume}% {icon}",
@@ -93,7 +93,7 @@
 		"interval": 60,
 		"on-click": "virt-manager",
 		"on-click-right": "looking-glass-client -s -F",
-		"exec": "$HOME/.scripts/waybar_vm_list.sh",
+		"exec": "$HOME/.scripts/waybar_hikari_check.sh",
 		"format-icons": ""
 	},
 	"custom/switch": {
@@ -107,10 +107,6 @@
 		"on-click": "$HOME/.scripts/waybar_shutdown.sh poweroff",
 		"on-click-right": "$HOME/.scripts/waybar_shutdown.sh reboot",
 		"on-click-middle": "$HOME/.scripts/waybar_shutdown.sh suspend"
-	},
-	"custom/changebg": {
-    	"exec": "~/.scripts/set_random_wallpaper.sh",
-	    "interval": 360,
 	},
 	"tray": {
 		"icon-size": 14,

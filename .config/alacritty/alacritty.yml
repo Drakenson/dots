@@ -5,26 +5,27 @@ multiplier: 10
 #Fonts
 font:
   normal:
-    family: Iosevka
-    style: Medium Extended
+    family: Cascadia Code
   bold:
-    family: Iosevka
-    style: Bold Extended
+    family: Cascadia Code
+    style: Bold
   italic:
-    family: Iosevka
-    style: Italic Extended
+    family: Cascadia Code
+    style: Italic
   bold_italic:
-    family: Opsevka
-    style: Bold Italic Extended
+    family: Cascadia Code
+    style: Bold Italic
   size: 10
 
 # Colors (Gruvbox dark)
 colors:
   primary:
     # hard contrast background - '#1d2021'
-    background:        &gruvbox_dark_bg '#282828'
+    #background:        &gruvbox_dark_bg '#282828'
+    background:        &gruvbox_dark_bg '#000000'
     # soft contrast background - '#32302f'
-    foreground:        '#ebdbb2'
+    #foreground:        '#ebdbb2'
+    foreground:        '#dddddd'
     bright_foreground: '#fbf1c7'
     dim_foreground:    '#a89984'
   cursor:
