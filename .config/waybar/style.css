@@ -1,7 +1,7 @@
 * {
 border-radius: 0;
 border: none;
-font-family: "Iosevka Medium Extended, Font Awesome 6 Free";
+font-family: "Cascadia Code, Font Awesome 6 Free";
 font-size: 9pt;
 }
 
@@ -54,7 +54,7 @@ color: #ffffff;
 	margin-right: 5px;
 }
 
-#network, #custom-loopback, #pulseaudio, #tray, #custom-lights, #custom-shutdown, #custom-switch, #custom-launcher {
+#custom-light, #network, #custom-loopback, #pulseaudio, #tray, #custom-lights, #custom-shutdown, #custom-switch, #custom-launcher {
     margin-right: 10px;
 }
 

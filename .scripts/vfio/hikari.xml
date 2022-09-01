@@ -5,7 +5,7 @@ OVERWRITTEN AND LOST. Changes to this xml configuration should be made using:
 or other application using the libvirt API.
 -->
 
-<domain type='kvm'>
+<domain type='kvm' xmlns:qemu='http://libvirt.org/schemas/domain/qemu/1.0'>
   <name>Hikari</name>
   <uuid>b1a7d925-f106-4842-aef3-42dc93f3c987</uuid>
   <metadata>
@@ -18,22 +18,13 @@ or other application using the libvirt API.
   <memoryBacking>
     <hugepages/>
   </memoryBacking>
-  <vcpu placement='static'>12</vcpu>
+  <vcpu placement='static'>3</vcpu>
   <iothreads>1</iothreads>
   <cputune>
-    <vcpupin vcpu='0' cpuset='0'/>
-    <vcpupin vcpu='1' cpuset='8'/>
-    <vcpupin vcpu='2' cpuset='1'/>
-    <vcpupin vcpu='3' cpuset='9'/>
-    <vcpupin vcpu='4' cpuset='2'/>
-    <vcpupin vcpu='5' cpuset='10'/>
-    <vcpupin vcpu='6' cpuset='3'/>
-    <vcpupin vcpu='7' cpuset='11'/>
-    <vcpupin vcpu='8' cpuset='4'/>
-    <vcpupin vcpu='9' cpuset='12'/>
-    <vcpupin vcpu='10' cpuset='5'/>
-    <vcpupin vcpu='11' cpuset='13'/>
-    <iothreadpin iothread='1' cpuset='6,14'/>
+    <vcpupin vcpu='0' cpuset='1'/>
+    <vcpupin vcpu='1' cpuset='2'/>
+    <vcpupin vcpu='2' cpuset='3'/>
+    <iothreadpin iothread='1' cpuset='0'/>
   </cputune>
   <os>
     <type arch='x86_64' machine='pc-q35-5.2'>hvm</type>
@@ -44,7 +35,7 @@ or other application using the libvirt API.
   <features>
     <acpi/>
     <apic/>
-    <hyperv mode='custom'>
+    <hyperv>
       <relaxed state='on'/>
       <vapic state='on'/>
       <spinlocks state='on' retries='8191'/>
@@ -57,7 +48,7 @@ or other application using the libvirt API.
     <ioapic driver='kvm'/>
   </features>
   <cpu mode='host-passthrough' check='none' migratable='on'>
-    <topology sockets='1' dies='1' cores='6' threads='2'/>
+    <topology sockets='1' dies='1' cores='3' threads='1'/>
   </cpu>
   <clock offset='localtime'>
     <timer name='rtc' tickpolicy='catchup'/>
@@ -76,21 +67,21 @@ or other application using the libvirt API.
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
     <disk type='file' device='disk'>
       <driver name='qemu' type='raw' cache='none' io='native' discard='unmap'/>
-      <source file='/libvirt/sys_pool/hikari.img'/>
-      <target dev='sda' bus='scsi' rotation_rate='1'/>
+      <source file='/virt/vdisk_nvme/hikari_drivec.img'/>
+      <target dev='sda' bus='scsi'/>
       <boot order='1'/>
       <address type='drive' controller='0' bus='0' target='0' unit='0'/>
     </disk>
-    <disk type='file' device='disk'>
+    <disk type='block' device='disk'>
       <driver name='qemu' type='raw' cache='none' io='native' discard='unmap'/>
-      <source file='/libvirt/ssd_pool/hikari_ssd.img'/>
-      <target dev='sdb' bus='scsi' rotation_rate='1'/>
+      <source dev='/dev/sdb'/>
+      <target dev='sdb' bus='scsi'/>
       <address type='drive' controller='0' bus='0' target='0' unit='1'/>
     </disk>
     <disk type='file' device='disk'>
       <driver name='qemu' type='raw' cache='none' io='native'/>
-      <source file='/libvirt/nvme_pool/hikari_hdd.img'/>
-      <target dev='sdc' bus='scsi' rotation_rate='1'/>
+      <source file='/virt/vdisk_hdd/nocow/hikari_drivee.img'/>
+      <target dev='sdd' bus='scsi'/>
       <address type='drive' controller='0' bus='0' target='0' unit='2'/>
     </disk>
     <controller type='scsi' index='0' model='virtio-scsi'>
@@ -155,11 +146,6 @@ or other application using the libvirt API.
       <target chassis='11' port='0xa'/>
       <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x2'/>
     </controller>
-    <controller type='pci' index='12' model='pcie-root-port'>
-      <model name='pcie-root-port'/>
-      <target chassis='12' port='0xb'/>
-      <address type='pci' domain='0x0000' bus='0x00' slot='0x01' function='0x3'/>
-    </controller>
     <controller type='virtio-serial' index='0'>
       <address type='pci' domain='0x0000' bus='0x03' slot='0x00' function='0x0'/>
     </controller>
@@ -168,7 +154,7 @@ or other application using the libvirt API.
     </controller>
     <interface type='bridge'>
       <mac address='52:54:00:17:b0:44'/>
-      <source bridge='br0'/>
+      <source bridge='bridge0'/>
       <model type='virtio'/>
       <address type='pci' domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
     </interface>
@@ -180,38 +166,36 @@ or other application using the libvirt API.
     <console type='pty'>
       <target type='serial' port='0'/>
     </console>
-    <input type='evdev'>
-      <source dev='/dev/input/by-id/usb-Razer_Razer_DeathAdder_V2-event-mouse'/>
-    </input>
-    <input type='evdev'>
-      <source dev='/dev/input/by-id/usb-Razer_Razer_BlackWidow_Chroma-if01-event-kbd' grab='all' repeat='on'/>
-    </input>
-    <input type='mouse' bus='virtio'>
-      <address type='pci' domain='0x0000' bus='0x0a' slot='0x00' function='0x0'/>
-    </input>
-    <input type='keyboard' bus='virtio'>
-      <address type='pci' domain='0x0000' bus='0x0b' slot='0x00' function='0x0'/>
-    </input>
     <input type='mouse' bus='ps2'/>
     <input type='keyboard' bus='ps2'/>
     <audio id='1' type='none'/>
     <hostdev mode='subsystem' type='pci' managed='yes'>
       <source>
-        <address domain='0x0000' bus='0x10' slot='0x00' function='0x0'/>
-      </source>
-      <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
-    </hostdev>
-    <hostdev mode='subsystem' type='pci' managed='yes'>
-      <source>
-        <address domain='0x0000' bus='0x10' slot='0x00' function='0x1'/>
+        <address domain='0x0000' bus='0x01' slot='0x00' function='0x0'/>
       </source>
       <address type='pci' domain='0x0000' bus='0x06' slot='0x00' function='0x0'/>
     </hostdev>
-    <memballoon model='none'/>
-    <shmem name='looking-glass'>
-      <model type='ivshmem-plain'/>
-      <size unit='M'>32</size>
-      <address type='pci' domain='0x0000' bus='0x09' slot='0x01' function='0x0'/>
-    </shmem>
+    <hostdev mode='subsystem' type='pci' managed='yes'>
+      <source>
+        <address domain='0x0000' bus='0x01' slot='0x00' function='0x1'/>
+      </source>
+      <address type='pci' domain='0x0000' bus='0x07' slot='0x00' function='0x0'/>
+    </hostdev>
+    <hostdev mode='subsystem' type='usb' managed='yes'>
+      <source>
+        <vendor id='0x045e'/>
+        <product id='0x028e'/>
+      </source>
+      <address type='usb' bus='0' port='1'/>
+    </hostdev>
+    <memballoon model='virtio'>
+      <address type='pci' domain='0x0000' bus='0x05' slot='0x00' function='0x0'/>
+    </memballoon>
   </devices>
+  <qemu:commandline>
+    <qemu:arg value='-set'/>
+    <qemu:arg value='device.scsi0-0-0-0.rotation_rate=1'/>
+    <qemu:arg value='-set'/>
+    <qemu:arg value='device.scsi0-0-0-1.rotation_rate=1'/>
+  </qemu:commandline>
 </domain>

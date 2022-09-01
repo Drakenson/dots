@@ -2,6 +2,7 @@
 
 #Wallpaper
 
+#Unused right now because of oguri
 set $WallpaperDir /home/robin/Bilder/Wallpaper
 set $WallpaperImage church_girl.jpg
 
@@ -198,7 +199,7 @@ exec --no-startup-id "sh -c 'sleep 5; exec scream'"
 exec --no-startup-id oguri
 exec --no-startup-id /home/robin/.scripts/set_random_wallpaper.sh
 #Telegram
-exec --no-startup-id telegram-desktop -startintray
+exec --no-startup-id "sh -c 'sleep 5; exec telegram-desktop -startintray'"
 #Nextcloud Client
 exec --no-startup-id "sh -c 'sleep 5; exec nextcloud'"
 #Notifications
@@ -209,5 +210,6 @@ exec --no-startup-id gammastep
 exec --no-startup-id polychromatic-cli -l
 #Evolution Mail
 exec --no-startup-id evolution
-
+#AppArmor Notify
+#exec --no-startup-id aa-notify -p -s 1 -w 60 -f /var/log/audit/audit.log
 

@@ -9,22 +9,12 @@ if [ "$domain_task" = "prepare" ]; then
 	fi
 	case "$domain_name" in
 		"Hikari")
+			touch /tmp/hikari.power
 			pages_needed=8192
 			echo 3 > /proc/sys/vm/drop_caches
 			echo 1 > /proc/sys/vm/compact_memory
 			echo $(($pages+$pages_needed)) > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
 		;;
-		"Rose")
-			pages_needed=4096
-			echo 3 > /proc/sys/vm/drop_caches
-			echo 1 > /proc/sys/vm/compact_memory
-			echo $(($pages+$pages_needed)) > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
-		;;
-		"Rika")
-			pages_needed=2048
-			echo 3 > /proc/sys/vm/drop_caches
-			echo 1 > /proc/sys/vm/compact_memory
-			echo $(($pages+$pages_needed)) > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
 	esac
 fi
 
@@ -35,15 +25,8 @@ if [ "$domain_task" = "release" ]; then
 	fi
 	case "$domain_name" in
 		"Hikari")
+			rm /tmp/hikari.power
 			pages_needed=8192
-			echo $(($pages-$pages_needed)) > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
-		;;
-		"Rose")
-			pages_needed=4096
-			echo $(($pages-$pages_needed)) > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
-		;;
-		"Rika")
-			pages_needed=2048
 			echo $(($pages-$pages_needed)) > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
 		;;
 	esac

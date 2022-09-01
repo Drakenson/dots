@@ -5,7 +5,7 @@
 	"height": 26,
 	"modules-left": ["sway/workspaces", "wlr/taskbar"],
 	"modules-center": ["mpd"],
-	"modules-right": [ "custom/vm", "network", "pulseaudio", "tray", "custom/shutdown", "custom/switch", "custom/launcher", "clock" ],
+	"modules-right": [ "custom/vm", "network", "pulseaudio", "tray", "custom/shutdown", "custom/light", "custom/switch", "custom/launcher", "clock" ],
 	"sway/window": {
 		"max-length": 50
 	},
@@ -79,7 +79,7 @@
 		},
 		"on-click-right": "pavucontrol",
 		"on-click-middle": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
-		"on-click": "$HOME/.scripts/waybar_pulse.sh",
+		"on-click": "~/.scripts/waybar_stereo51.sh",
 		"tooltip": false
 	},
 	"custom/launcher": {
@@ -95,6 +95,11 @@
 		"on-click-right": "looking-glass-client -s -F",
 		"exec": "$HOME/.scripts/waybar_hikari_check.sh",
 		"format-icons": ""
+	},
+	"custom/light": {
+		"format": "  ",
+		"max-lenth": 4,
+		"on-click": "curl -s 'https://beli.it.drakenson.de/tratfri/worker.php?special=robin' > /dev/null"
 	},
 	"custom/switch": {
 		"format": "  ",

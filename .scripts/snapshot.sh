@@ -4,9 +4,9 @@ if [[ $EUID -ne 0 ]]; then
     exit 1
 else
 	now=$(date +"%Y%m%d_%H%M")
-	snapper -c system create --description "$now" -c number
-	snapper -c home create --description "$now" -c number
-	snapper -c data create --description "$now" -c number	
+	snapper -c system create --description "$now"
+	snapper -c home create --description "$now"
+	snapper -c data create --description "$now"
 	echo "Snapshots angelegt"
 	echo ""
 fi
