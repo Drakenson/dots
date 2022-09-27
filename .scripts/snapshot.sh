@@ -7,6 +7,9 @@ else
 	snapper -c system create --description "$now"
 	snapper -c home create --description "$now"
 	snapper -c data create --description "$now"
+	snapper -c system list > /.pool/system/system.list
+	snapper -c home list > /.pool/system/home.list
+	snapper -c data list > /.pool/system/data.list
 	echo "Snapshots angelegt"
 	echo ""
 fi

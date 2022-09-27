@@ -13,6 +13,7 @@ if [ "$domain_task" = "prepare" ]; then
 			pages_needed=8192
 			echo 3 > /proc/sys/vm/drop_caches
 			echo 1 > /proc/sys/vm/compact_memory
+			cp --sparse=always /libvirt/nvme_pool/hikari_tmp.img /libvirt/tmp_pool
 			echo $(($pages+$pages_needed)) > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
 		;;
 	esac
@@ -26,6 +27,7 @@ if [ "$domain_task" = "release" ]; then
 	case "$domain_name" in
 		"Hikari")
 			rm /tmp/hikari.power
+			rm /libvirt/tmp_pool/hikari_tmp.img
 			pages_needed=8192
 			echo $(($pages-$pages_needed)) > /sys/kernel/mm/hugepages/hugepages-2048kB/nr_hugepages
 		;;

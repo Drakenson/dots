@@ -123,6 +123,7 @@ set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
 set $ws0 "10"
+set $wsb ""
 set $wsn ""
 set $wsm ""
 #bind workspaces to screens
@@ -150,6 +151,7 @@ bindsym $win+7 workspace $ws7
 bindsym $win+8 workspace $ws8
 bindsym $win+9 workspace $ws9
 bindsym $win+0 workspace $ws0
+bindsym $win+b workspace $wsb
 bindsym $win+n workspace $wsn
 bindsym $win+m workspace $wsm
 
@@ -164,6 +166,7 @@ bindsym $win+Shift+7 move container to workspace $ws7
 bindsym $win+Shift+8 move container to workspace $ws8
 bindsym $win+Shift+9 move container to workspace $ws9
 bindsym $win+Shift+0 move container to workspace $ws0
+bindsym $win+Shift+b move container to workspace $wsb
 bindsym $win+Shift+n move container to workspace $wsn
 bindsym $win+Shift+m move container to workspace $wsm
 
@@ -205,7 +208,7 @@ exec --no-startup-id "sh -c 'sleep 5; exec nextcloud'"
 #Notifications
 exec --no-startup-id mako
 #Nightmode
-exec --no-startup-id gammastep
+exec --no-startup-id gammastep-indicator
 #Polychromatic Config (einmal auflisten, um sicherzustellen, dass Farbeinstellungen geladen werden..)
 exec --no-startup-id polychromatic-cli -l
 #Evolution Mail
